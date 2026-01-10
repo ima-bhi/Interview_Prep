@@ -1,6 +1,5 @@
 class Solution {
 public:
-    // function to reverse array value from specific start to end index
     void reverse(vector<int>& num, int low, int high) {
         while (low < high) {
             swap(num[low], num[high]);
