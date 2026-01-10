@@ -1,17 +1,15 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        // dynamic array size and count
-        int count = 0;
-        int n = nums.size();
-        // iterate over array and increase count
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] == nums[i - 1])
-                count++;
-            else
-                // insert value from index o to n-count
-                nums[i - count] = nums[i];
+        int n=nums.size();
+        int k=1,d=nums[0];
+        for(int i=1;i<n;i++){
+            if(d !=nums[i]){
+                //means element is different
+                nums[k++]=nums[i];
+                d=nums[i];
+            }
         }
-        return n - count;
+        return k;
     }
 };
