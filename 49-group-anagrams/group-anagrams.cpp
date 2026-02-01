@@ -5,7 +5,7 @@ public:
 
         for (string s : strs) {
             string key = s;
-            sort(key.begin(), key.end()); // normalize
+            sort(key.begin(), key.end()); // normalize -- sort key
             mp[key].push_back(s);
         }
 
