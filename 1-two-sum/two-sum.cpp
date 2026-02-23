@@ -1,23 +1,19 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        // int n = nums.size();
-        // for (int i = 0; i < n - 1; i++) {
-        //     for (int j = i + 1; j < n; j++) { // important fix
-        //         if (nums[i] + nums[j] == target) {
-        //             return {i, j};
-        //         }
-        //     }
-        // }
-
+        // use unordered_map b/c we don't need sort data
         unordered_map<int, int> num_map;
         int n = nums.size();
-
+        //iterate over array
         for (int i = 0; i < n; i++) {
-            int complement = target - nums[i];
-            if (num_map.count(complement)) {
-                return {num_map[complement], i};
+            int diff = target - nums[i];
+            
+            // check diff is available or not  - boolean
+            if (num_map.count(diff)) {
+                return {num_map[diff], i};
             }
+
+            //push value on map 
             num_map[nums[i]] = i;
         }
         return {}; // if no solution found
