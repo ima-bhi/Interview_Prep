@@ -1,7 +1,9 @@
 class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
+        //iterate iver array
         for (int i = 0; i < flowerbed.size(); i++) {
+            // left is i ===0 or f[i-1]==0
             bool left = i == 0 || flowerbed[i - 1] == 0;
             bool right = i == flowerbed.size() - 1 || flowerbed[i + 1] == 0;
 
