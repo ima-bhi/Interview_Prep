@@ -4,15 +4,12 @@ public:
         // intialize left and right pointer
         int left = 0, right = s.length() - 1;
         while (left < right) {
-            /*
-            isalnum(ch) returns:
-            true (non-zero) → if ch is a letter (A–Z, a–z) or a digit (0–9)
-            false (0) → otherwise
-            */
+            // skip left and right if num is not alphabet or numer
             if (!isalnum(s[left]))
                 left++;
             else if (!isalnum(s[right]))
                 right--;
+            // if both are not same retuen false
             else if (tolower(s[left]) != tolower(s[right]))
                 return false;
             else {
