@@ -11,6 +11,6 @@ public:
             tp++;
         }
 
-        return sp == s.length();
+        return sp == s.length();        
     }
 };
