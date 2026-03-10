@@ -11,12 +11,7 @@ public:
             int start = max(s1, s2),end = min(e1, e2);
             if(start<=end) intersections.push_back({start,end}); // pushing intersection in []
             // 3 : choose which pointer to increment
-            if(e1<e2){
-                i++;
-            }
-            else{
-                j++;
-            }
+            (e1<e2) ? i++ : j++ ;
         }
         return intersections;
     }
