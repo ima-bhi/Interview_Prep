@@ -2,7 +2,7 @@ class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
         int n = nums.size();
-        // clean the array 
+        //structing the arr
         for (int i = 0; i < n; ++i) {
             if (nums[i] <= 0 || nums[i] > n) {
                 nums[i] = n + 1;
