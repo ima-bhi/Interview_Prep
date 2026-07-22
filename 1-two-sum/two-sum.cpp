@@ -1,18 +1,15 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        // use unordered_map b/c we don't need sort data
+        // storing {data :key , index}
         unordered_map<int, int> num_map;
         int n = nums.size();
-        //iterate over array
         for (int i = 0; i < n; i++) {
-            int diff = target - nums[i];
-            
-            // check diff is available or not  - boolean
-            if (num_map.count(diff)) {
-                return {num_map[diff], i};
+            int left = target - nums[i];
+            //finding left in map and return idx of left and current
+            if (num_map.count(left)) {
+                return {num_map[left], i};
             }
-
             //push value on map 
             num_map[nums[i]] = i;
         }
