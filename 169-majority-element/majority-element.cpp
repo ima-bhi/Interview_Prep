@@ -2,13 +2,12 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int count = 0, candidate = 0;
-        for (int num : nums) {
-            // initialize candidate
+        for (int i = 0; i < nums.size(); i++) {
             if (count == 0) {
-                candidate = num;
+                candidate = nums[i];
             }
             // if num is same -- increase count
-            if (num == candidate) {
+            if (nums[i] == candidate) {
                 count++;
             } else {
                 // else decrement counter
